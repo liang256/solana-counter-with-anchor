@@ -34,7 +34,7 @@ pub mod set_counter_anchor {
 #[derive(Accounts)]
 pub struct Initialize<'info> {
     #[account(init, payer = user, space = 8 + 4)]
-    pub state: Account<'info, StateAccount>,
+    pub state: Account<'info, State>,
     #[account(mut)]
     pub user: Signer<'info>,
     pub system_program: Program<'info, System>
@@ -43,10 +43,10 @@ pub struct Initialize<'info> {
 #[derive(Accounts)]
 pub struct Update<'info> {
     #[account(mut)]
-    pub state: Account<'info, StateAccount>
+    pub state: Account<'info, State>
 }
 
 #[account]
-pub struct StateAccount {
+pub struct State {
     pub counter: u32
 }

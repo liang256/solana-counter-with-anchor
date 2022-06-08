@@ -24,7 +24,7 @@ describe("set_counter_anchor", () => {
       signers: [stateAccount],
     });
 
-    const state = await program.account.stateAccount.fetch(stateAccount.publicKey);
+    const state = await program.account.state.fetch(stateAccount.publicKey);
     assert.equal(state.counter, 0);
   });
 
@@ -35,7 +35,7 @@ describe("set_counter_anchor", () => {
       }
     });
 
-    const state = await program.account.stateAccount.fetch(stateAccount.publicKey);
+    const state = await program.account.state.fetch(stateAccount.publicKey);
     assert.equal(state.counter, setValue);
   });
 
@@ -46,7 +46,7 @@ describe("set_counter_anchor", () => {
       }
     });
 
-    const state = await program.account.stateAccount.fetch(stateAccount.publicKey);
+    const state = await program.account.state.fetch(stateAccount.publicKey);
     assert.equal(state.counter, setValue + 1);
   });
 
@@ -57,7 +57,7 @@ describe("set_counter_anchor", () => {
       }
     });
 
-    const state = await program.account.stateAccount.fetch(stateAccount.publicKey);
+    const state = await program.account.state.fetch(stateAccount.publicKey);
     assert.equal(state.counter, setValue);
   });
 });

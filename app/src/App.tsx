@@ -58,6 +58,7 @@ const Content: FC = () => {
     const inputRef = useRef<HTMLInputElement>(null);
     const wallet = useAnchorWallet();
 
+    // Establish the connection
     if (!wallet) {
         return null;
     }
@@ -75,6 +76,7 @@ const Content: FC = () => {
     const b = JSON.parse(a);
     const program = new Program(b, idl.metadata.address, provider);
     
+    // Functions to interact with the counter program
     async function initialize() {
         try {
             await program.rpc.initialize({

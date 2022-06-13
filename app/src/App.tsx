@@ -10,7 +10,7 @@ import {
 } from '@solana/wallet-adapter-wallets';
 import { clusterApiUrl, Connection } from '@solana/web3.js';
 import React, { FC, ReactNode, useMemo, useState, useRef } from 'react';
-import idl from './idl.json';
+import idl from '../../target/idl/set_counter_anchor.json';
 import { Program, BN, Provider, web3 } from "@project-serum/anchor";
 
 const stateAccount = web3.Keypair.generate();
